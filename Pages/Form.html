@@ -26,13 +26,13 @@
                 <span class="email-error"></span>
             </div>
             <div>
-                <label for="url">Url</label>
-                <input type="url" id="url">
-            </div>
-            <div>
                 <label for="number">Phone Number</label>
                 <input type="text" id="number">
                 <span class="phone-error"></span>
+            </div>
+            <div>
+                <label for="url">Url</label>
+                <input type="url" id="url">
             </div>
             <div>
                 <label for="search">Search</label>
@@ -59,8 +59,7 @@
         {
             output.textContent=salary.value;
         });
-        
-        /*Name Validation*/
+        /*Name*/
         let text=document.querySelector('#name');
         let error=document.querySelector('.text-error');
         text.addEventListener('input',function()
@@ -70,6 +69,17 @@
                    error.textContent="";
             else
                     error.textContent="Name is invalid";
+        });
+        /*Email*/
+        let email=document.querySelector('#email');
+        let emailError=document.querySelector('.email-error');
+        email.addEventListener('input',function()
+        {
+            let emailRegex=RegExp('^[a-z]{3,}[.a-z]*[@][a-z]{2,}[.][a-z]{2,}[.a-z]*$');
+            if(emailRegex.test(email.value))
+                   emailError.textContent="";
+            else
+                    emailError.textContent="Email is invalid";
         });
     </script>
 </body>      
