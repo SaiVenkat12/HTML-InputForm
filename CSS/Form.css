@@ -64,3 +64,8 @@ input
     font-size: 10px;
     color:red;
 }
+.password-error
+{
+    font-size: 10px;
+    color:red;
+}
